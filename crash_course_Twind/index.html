@@ -5,8 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manage Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/script.js" defer></script>
+    <style>
+      body {
+        background-image: url(img/bg-tablet-pattern.svg);
+        background-repeat: no-repeat;
+        background-size: 800px;
+        background-position: 90% -25%;
+      }
+      #cta {
+        background-image: url("img/bg-simplify-section-desktop.svg");
+        background-repeat: no-repeat;
+      }
+
+      @media (max-width: 576px) {
+        body {
+          background-position: 50px -50px;
+          background-size: 500px;
+        }
+
+        #cta {
+          background-image: url("img/bg-simplify-section-mobile.svg");
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-gray-100">
     <!-- Navbar -->
     <nav class="relative container mx-auto p-6">
       <!-- flex container -->
@@ -28,6 +52,28 @@
           class="hidden p-3 px-6 pt-2 text-white bg-red-500 rounded-full baseline hover:bg-red-200 md:block"
           >Get Started</a
         >
+        <!-- Hamburger Icon -->
+        <button
+          id="menu-btn"
+          class="relative h-8 w-8 md:hidden focus:outline-none"
+        >
+          <div
+            class="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-black before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded before:bg-black before: before: before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded after:bg-black after: after: after:content-['']"
+          ></div>
+        </button>
+        <!-- Mobile Menu -->
+      </div>
+      <div class="md:hidden">
+        <div
+          id="menu"
+          class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+        >
+          <a href="#" class="hover:text-slate-400">Pricing</a>
+          <a href="#" class="hover:text-slate-400">Product</a>
+          <a href="#" class="hover:text-slate-400">About Us</a>
+          <a href="#" class="hover:text-slate-400">Careers</a>
+          <a href="#" class="hover:text-slate-400">Community</a>
+        </div>
       </div>
     </nav>
     <!-- Hero Section -->
